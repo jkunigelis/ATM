@@ -23,6 +23,8 @@ public class ATM extends Account{
 	}
 	//menu
 	public static void menu() {
+		User.setName();
+		System.out.println("\nHello, " + getName() + ".\n");
 		Account.setAccountNum();
 		if (Account.checkAccountNum() == true) {
 			User.setPin();
@@ -45,11 +47,15 @@ public class ATM extends Account{
 						Account.getBalance();
 						break;
 					case 'e':
+						System.out.println("\nHave a good day, " + getName() + ".");
 						break;
 					default:
 						System.out.print("Please enter valid command.");
 					}
 				}
+			}
+			else {
+				System.out.println("Please enter valid pin.");
 			}
 		}
 	}

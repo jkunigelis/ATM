@@ -21,7 +21,10 @@ public class User {
 		pin = in.nextInt();
 	}
 	public static boolean checkPin() {
-		if (pin != 0) {
+		if (Integer.toString(pin).length() != 4) {
+			return false;
+		}
+		else if (pin != 0){
 			return true;
 		}
 		else {
@@ -31,7 +34,11 @@ public class User {
 	public int getPhoneNum() {
 		return phoneNum;
 	}
-	public String getName() {
+	public static void setName() {
+		System.out.println("Please enter name.");
+		name = in.nextLine();
+	}
+	public static String getName() {
 		return name;
 	}
 	public int getSsn() {
